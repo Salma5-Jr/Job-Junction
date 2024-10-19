@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:junction/SignUp.dart';
 import 'package:junction/homepage.dart';
 import 'package:junction/firstpage.dart';
 
@@ -15,7 +16,7 @@ class Job extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     home:HomePage(backgroundColor: Colors.white),
+     home:SignUpPage(backgroundColor: Colors.white),
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
