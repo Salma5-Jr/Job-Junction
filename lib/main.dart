@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:junction/SignIn.dart';
 import 'package:junction/SignUp.dart';
 import 'package:junction/homepage.dart';
-import 'package:junction/firstpage.dart';
+import 'secondpage.dart';
 
 void main() {
   runApp(const Job());
@@ -16,7 +17,7 @@ class Job extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     home:SignUpPage(backgroundColor: Colors.white),
+     home:SecondPage(backgroundColor: Colors.white),
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),

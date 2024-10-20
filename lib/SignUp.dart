@@ -1,91 +1,144 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:junction/SignIn.dart';
 
-class SignUpPage extends StatefulWidget {
-  const  SignUpPage({super.key, required Color backgroundColor});
+class SignUpPageState extends StatefulWidget {
+  const SignUpPageState({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<SignUpPageState> createState() => _SignUpPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
-// TextEditingController _usernameController= TextEditingController();
-TextEditingController _emailController= TextEditingController();
-TextEditingController _passwordController= TextEditingController();
+class _SignUpPageState extends State<SignUpPageState> {
+  // TextEditingController for handling input text
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
-
-@override
-void dispose(){
-  // _usernameController.dispose();
-  _emailController.dispose();
-  _passwordController.dispose();
-}
-
-// button
-void _onButtonPressed() {
-    print('Button Pressed!');
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 
+  // Button press action
+  void _onButtonPressed() {
+    // Implement the button press functionality
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    // Example logic to check if email and password are entered
+    if (email.isNotEmpty && password.isNotEmpty) {
+      // For now, we'll just print them out
+      print("Email: $email, Password: $password");
+      // You can add further actions such as form validation or API call here
+    } else {
+      // Show a simple error if fields are empty
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter both email and password')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('JOB JUNCTION'),
+        title: const Text('JOB JUNCTION'),
+        centerTitle: true,
         backgroundColor: Colors.blue,
       ),
-
-     body:      
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-Text('SIGN IN', style: TextStyle(fontSize:32,fontWeight:FontWeight.bold, fontStyle:FontStyle.normal)),
+            const Text(
+              'SIGN UP',
+              style: TextStyle(
+                fontSize:20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
 
-            //email field
-TextField(
-controller: _emailController,
+            //firstname
+            const TextField(
+              keyboardType: TextInputType.text,
+              decoration:InputDecoration(
+                labelText: 'first name',
+                border: OutlineInputBorder(),
+              ) ,
+            ),
+            SizedBox(height: 5,),
+
+             //middlename
+            const TextField(
+              keyboardType: TextInputType.text,
+              decoration:InputDecoration(
+                labelText: 'middle name',
+                border: OutlineInputBorder(),
+              ) ,
+            ),
+            SizedBox(height: 5,),
+
+             //lastname
+            const TextField(
+              keyboardType: TextInputType.text,
+              decoration:InputDecoration(
+                labelText: 'last name',
+                border: OutlineInputBorder(),
+              ) ,
+            ),
+            SizedBox(height: 5,),
+
+             //contact
+            const TextField(
+              keyboardType: TextInputType.number,
+              decoration:InputDecoration(
+                labelText: 'contact',
+                border: OutlineInputBorder(),
+              ) ,
+            ),
+            SizedBox(height: 5,),
+
+            // Email field
+            TextField(
+              controller: _emailController,
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
 
+            // Password field
+            TextField(
+              controller: _passwordController,
+              keyboardType: TextInputType.text,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+              ),
+              obscureText: true, // Password is hidden by default
+            ),
+            const SizedBox(height: 5),
 
-//password field
-TextField(
-  controller: _passwordController,
-  keyboardType: TextInputType.text,
-  decoration: InputDecoration(
-    border: OutlineInputBorder(),
-    labelText: ('Password'),
-  ),
- obscureText: true,
-),
- 
-SizedBox(height: 15,),
-
-
-ElevatedButton(onPressed: _onButtonPressed, 
-child: Text('Sign in'),
-style: ElevatedButton.styleFrom(
-            minimumSize: Size(200, 50), // Button size
-            textStyle: TextStyle(fontSize: 18),
-
-),
-// backgroundColor:Colors.blue,
-)
+            //Sign Up button
+            ElevatedButton(
+              onPressed: _onButtonPressed,
+              child: const Text('save'),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(50, 50), // Button size
+                textStyle: const TextStyle(fontSize: 18), // Text style
+              ),
+            ),
+            TextButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPageState()));
+            }, child: Text('save'))
           ],
         ),
-
-       ),
-
-     
+      ),
     );
   }
 }
-
-

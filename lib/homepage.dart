@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('JOB JUNCTION'),
+        centerTitle: true,
         actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
         ],
