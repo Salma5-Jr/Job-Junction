@@ -24,8 +24,6 @@ class _SignInPageState extends State<SignInPage> {
     super.dispose(); // This line was missing
   }
 
-  
-
   // Button press action
   void _onButtonPressed() {
     Navigator.push(context,

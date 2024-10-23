@@ -52,18 +52,18 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.badge),
-            label: 'Jobs',
+            label: 'Tanzanite',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.share_arrival_time_rounded),
+            label: 'Silver',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
           label: "Gold"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.roundabout_left),
-          label: "Silver")
+            icon: Icon(Icons.person),
+          label: "profile")
           
         ],
       ),

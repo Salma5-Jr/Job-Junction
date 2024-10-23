@@ -8,7 +8,7 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Container(color: Color.fromARGB(255, 0, 0, 0),width: 200,
+        child: Container(color: Color.fromARGB(255, 231, 227, 227),width: 200,
           child: Column(
       children: [const SizedBox(height: 80,),
           TextButton.icon(
@@ -20,11 +20,12 @@ class Navigation extends StatelessWidget {
             icon: const Icon(Icons.note),
             label: const Text("About"),
           ),
-      TextButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.delete),
-            label: const Text("Trash"),
-          ),TextButton.icon(
+      // TextButton.icon(
+      //       onPressed: () {},
+      //       icon: const Icon(Icons.delete),
+      //       label: const Text("Trash"),
+      //     ),
+          TextButton.icon(
             onPressed: () {},
             icon: const Icon(Icons.share),
             label: const Text("share"),

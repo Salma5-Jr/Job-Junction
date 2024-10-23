@@ -49,7 +49,7 @@ class _SecondPageState extends State<SecondPage> {
                 width: double.infinity,
                 child: const Center(
                   child: Text(
-                    'RECRUITERS',
+                    'EMPLOYEERS',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
