@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:junction/navigation.dart';
+import 'package:junction/profile.dart';
 
 class JobHomePage extends StatefulWidget {
   const JobHomePage({super.key});
@@ -13,28 +14,27 @@ class _JobHomePageState extends State<JobHomePage> {
 
    final List<Widget> _pages = const [
     Center(child: Text('Home', style: TextStyle(fontSize: 10))),
-    Center(child: Text('Jobs', style: TextStyle(fontSize: 10))),
-    Center(child: Text('Profile', style: TextStyle(fontSize: 10))),
-     Center(child: Text('Gold', style: TextStyle(fontSize: 10))),
-      Center(child: Text('Silver', style: TextStyle(fontSize: 10))),
+    Center(child: Text('CV', style: TextStyle(fontSize: 10))),
+    Center(child: Text('Edit', style: TextStyle(fontSize: 10))),
+     Center(child: Text('Profile', style: TextStyle(fontSize: 10))),
+      // Center(child: Text('Silver', style: TextStyle(fontSize: 10))),
   ];
 void _onTabTapped(int index){
   setState(() {
     _currentIndex=index;
+
+
+    if(index==3){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+    }
   });
 }
-
-//  void _onTabTapped(int index) {
-//     setState(() {
-//       _currentIndex = index;
-//     });
-//   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('JOB SEEKERS'),
+        title: const Text('JOB SEEKERS'),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
@@ -61,10 +61,11 @@ void _onTabTapped(int index){
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
           label: "Edit"),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
           label: "profile")
-          
+         
         ],
       ),
 

@@ -1,12 +1,82 @@
+
+// buildscript {
+//     repositories {
+//         google()
+//         mavenCentral()
+//     }
+//     dependencies{
+//         classpath 'com.android.tools.build:gradle:7.0.2'
+//         classpath 'com.google.gms.google-services:4.4.2'
+//     }
+   
+// }
+// plugins {
+//     id 'kotlin-android'
+//     id 'dev.flutter.flutter-gradle-plugin' // Flutter plugin should be applied after other plugins
+//     id 'com.android.application'
+    
+// }
+
+// android {
+//     namespace = "com.example.junction"  // Replace this with your actual namespace
+//     compileSdk = flutter.compileSdkVersion
+//     ndkVersion = flutter.ndkVersion
+
+//     compileOptions {
+//         sourceCompatibility = JavaVersion.VERSION_1_8
+//         targetCompatibility = JavaVersion.VERSION_1_8
+//     }
+
+//     kotlinOptions {
+//         jvmTarget = "1.8"
+//     }
+
+//     defaultConfig {
+//         applicationId = "com.example.junction"  // Your unique application ID
+//         minSdk = flutter.minSdkVersion
+//         targetSdk = flutter.targetSdkVersion
+//         versionCode = flutter.versionCode
+//         versionName = flutter.versionName
+//     }
+
+//     buildTypes {
+//         release {
+//             signingConfig = signingConfigs.debug
+//         }
+//     }
+// }
+
+// flutter {
+//     source = "../.."
+// }
+// dependencies{
+//     implementation platform('com.google.firebase:firebase-bom:33.5.1')
+// }
+
+// 'com.google.gms.google-services'
+
+
+
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2'  // Adjust to your Android Gradle Plugin version
+        classpath 'com.google.gms:google-services:4.4.2'  // Ensure correct syntax for Google Services plugin
+    }
+}
+
 plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dev.flutter.flutter-gradle-plugin'
 }
 
 android {
-    namespace = "com.example.junction"
+    namespace = "com.example.junction"  // Replace with your actual namespace
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -16,14 +86,11 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "1.8"
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.junction"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        applicationId = "com.example.junction"  // Your unique application ID
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
@@ -32,8 +99,6 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
         }
     }
@@ -42,3 +107,9 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:33.5.1') // Firebase BOM for Firebase dependencies
+}
+
+'com.google.gms.google-services'  // Apply Google Services plugin here

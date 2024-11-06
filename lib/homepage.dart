@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
         ],
          backgroundColor: const Color.fromARGB(255, 60, 103, 143),
       ),
+
       body: _pages[_currentIndex], // Display the selected page
       bottomNavigationBar:BottomNavigationBar(
         currentIndex: _currentIndex, // Currently selected index

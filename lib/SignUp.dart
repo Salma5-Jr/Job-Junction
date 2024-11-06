@@ -26,17 +26,7 @@ class _SignUpPageState extends State<SignUpPageState> {
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    // // Example logic to check if email and password are entered
-    // if (email.isNotEmpty && password.isNotEmpty) {
-    //   // For now, we'll just print them out
-    //   print("Email: $email, Password: $password");
-    //   // You can add further actions such as form validation or API call here
-    // } else {
-    //   // Show a simple error if fields are empty
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('Please enter both email and password')),
-    //   );
-    // }
+  
   }
 
   @override

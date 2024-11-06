@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "848919421915",
+    "project_id": "junction-app-e8128",
+    "storage_bucket": "junction-app-e8128.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:848919421915:android:f862b5c360a9927793bdfe",
+        "android_client_info": {
+          "package_name": "com.example.junction"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0I-UTPB7kiJY_GDJHNjkfgWBdgOBf7dY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
